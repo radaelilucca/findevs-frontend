@@ -10,7 +10,7 @@ import './Main.css';
 
 import DevItem from './components/DevItem';
 import DevForm from './components/DevForm';
-import logo from './assets/Logo.png';
+import logo from './assets/Logo3.png';
 
 
 function App() {
