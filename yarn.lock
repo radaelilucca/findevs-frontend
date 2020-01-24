@@ -8759,6 +8759,13 @@ react-error-overlay@^6.0.4:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.4.tgz#0d165d6d27488e660bc08e57bdabaad741366f7a"
   integrity sha512-ueZzLmHltszTshDMwyfELDq8zOA803wQ1ZuzCccXa1m57k1PxSHfflPD5W9YIiTXLs0JTLzoj6o1LuM5N6zzNA==
 
+react-icons@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.8.0.tgz#229de5904809696c9f46932bd9b6126b2522866e"
+  integrity sha512-rA/8GRKjPulft8BSBSMsHkE1AGPqJ7LjNsyk0BE7XjG70Iz62zOled2SJk7LDo8x9z86a3xOstDlKlMZ4pAy7A==
+  dependencies:
+    camelcase "^5.0.0"
+
 react-is@^16.8.1, react-is@^16.8.4:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
@@ -10027,6 +10034,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^9.7.0:
+  version "9.7.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.7.0.tgz#4a3c4c9e360169ebcb70c2d648cc47b8f3d6e314"
+  integrity sha512-oGGj9hzl/HFx5I33VQyuYCIr3O1HBpQWB10MGYgzbc/3YWKaViH26U1eqq1N+5wtNlviscRBu+4vhSC/237THw==
 
 symbol-tree@^3.2.2:
   version "3.2.4"

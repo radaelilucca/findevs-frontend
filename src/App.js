@@ -15,6 +15,7 @@ import logo from './assets/Logo3.png';
 
 function App() {
   const [devs, setDevs] = useState([]);
+
   useEffect(() => {
     async function loadDevs() {
       const response = await api.get('/devs');
@@ -23,12 +24,29 @@ function App() {
     }
 
     loadDevs();
-  }, []);
+  }, [devs]);
 
   async function handleAddDev(data) {
     const response = await api.post('/devs', data);
 
     setDevs([...devs, response.data]);
+  }
+
+  async function handleInativeDev(data) {
+
+    console.log(data)
+    
+    await api.put(`/devs/delete/${data}`);
+    console.log(data.github_user)
+    
+
+    const filterDevs = devs.filter(
+      dev => dev.github_user !== data.github_user
+    );
+
+    console.log(filterDevs)
+
+    setDevs(filterDevs);
   }
 
 
@@ -40,8 +58,8 @@ function App() {
       </aside>
       <main>
         <ul>
-          {devs.map((dev) => (
-            <DevItem key={dev._id} dev={dev} />
+          {devs.map(dev => (
+            <DevItem dev={dev} key={dev._id} deletar={handleInativeDev}/>
           ))}
         </ul>
       </main>

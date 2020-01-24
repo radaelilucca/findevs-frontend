@@ -40,12 +40,33 @@ li.dev-item header .user-info{
     margin: 10px 0
   }
 
-  li.dev-item a {
-    color: #8e4dff;
-    font-size: 14px;
-    text-decoration: none;
+
+  
+  .remove-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+  }
+  
+  .remove-item button {
+    background: #553AA2;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background 0.1s;
+  
+    display: flex;
   }
 
-  li.dev-item a:hover {
-    color: #5a2ea6;
-      }
+  .remove-item :hover {
+    background-color: #8e4dff;
+    border-radius: 5px;
+  }
+
+  
+
+
