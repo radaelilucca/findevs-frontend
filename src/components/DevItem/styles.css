@@ -1,4 +1,7 @@
 li.dev-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #FFF;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0,02);
   border-radius: 3px;
@@ -42,14 +45,14 @@ li.dev-item header .user-info{
 
 
   
-  .remove-item {
+  .dev-buttons {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
-    
+    margin-top: 10px;
   }
   
-  .remove-item button {
+  .dev-buttons button {
+    border: 0;
     background: #553AA2;
     padding: 5px;
     border-radius: 3px;
@@ -62,7 +65,7 @@ li.dev-item header .user-info{
     display: flex;
   }
 
-  .remove-item :hover {
+  .dev-buttons :hover {
     background-color: #8e4dff;
     border-radius: 5px;
   }

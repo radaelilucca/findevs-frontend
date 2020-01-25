@@ -38,7 +38,7 @@ export default function DevItem({ dev, deletar }) {
 
       <p>{dev.bio}</p>
 
-      <div className="remove-item">
+      <div className="dev-buttons">
       
       <a id="github" href={`https://github.com/${dev.github_user}`} target="blank"><button><FaGithubAlt/></button></a>     
       <button
