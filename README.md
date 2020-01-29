@@ -1,2 +1,3 @@
-# findev-frontend Code to deploy on Heroku.
-Findev's frontend
+<h1 align="center"> Code to deploy on Heroku. <h1>
+  <p align="center"> <img width=30% src="https://github.com/radaelilucca/findevs-frontend/blob/master/public/view-production-banner-illus.png?raw=true"/>
+
