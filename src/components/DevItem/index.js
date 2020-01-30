@@ -40,8 +40,8 @@ export default function DevItem({ dev, deletar }) {
 
       <div className="dev-buttons">
       
-      <a id="github" href={`https://github.com/${dev.github_user}`} target="blank"><button><FaGithubAlt/></button></a>     
-      <button
+      <a id="github" href={`https://github.com/${dev.github_user}`} target="blank"><button><FaGithubAlt/></button></a>  
+          <button
           title="Deletar"
           type="button"
           onClick={() => {
@@ -49,6 +49,7 @@ export default function DevItem({ dev, deletar }) {
           }}  
           id="trash"      
         >
+        
           <FaTrashAlt />
         </button>
       </div>
