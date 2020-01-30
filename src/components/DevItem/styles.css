@@ -5,8 +5,10 @@ li.dev-item{
   background: #FFF;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0,02);
   border-radius: 3px;
-  padding: 20px
+  padding: 20px;
+  transition: 0.1s
 }
+
 
 li.dev-item header {
 display: flex;
@@ -18,10 +20,26 @@ li.dev-item header img{
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  transition: 0.3s
+}
+
+li.dev-item header:hover > img {
+  transform: scale(2.5);
+  border-radius: 10%;
+  z-index: 5;
+}
+
+li.dev-item header:hover > .user-info {
+  margin-left: 50px;
+}
+
+li.dev-item header img:hover > li.dev-item{
+    transform: scale(2.5);
 }
 
 li.dev-item header .user-info{
   margin-left: 10px;
+  transition: 0.1s
 }
 
 .user-info strong {
@@ -42,13 +60,13 @@ li.dev-item header .user-info{
     line-height: 20px;
     margin: 10px 0
   }
-
-
-  
+ 
   .dev-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    align-items: center;
+    
   }
   
   .dev-buttons button {
@@ -58,17 +76,11 @@ li.dev-item header .user-info{
     border-radius: 3px;
     font-size: 20px;
     color: #fff;
-    cursor: pointer;
-    border: none;
-    transition: background 0.1s;
-  
+    cursor: pointer;    
+    transition: background 0.1s;  
     display: flex;
   }
 
-  .dev-buttons :hover {
-    background-color: #8e4dff;
-    border-radius: 5px;
-  }
 
   
 
