@@ -1,6 +1,8 @@
 import React from 'react'
 
 import SignUp from './pages/SignUp'
+import SignIn from './pages/Login'
+import Main from './pages/Main'
 
 import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom"
 
@@ -23,9 +25,9 @@ const PrivateRoute = ({component: Component, ...rest}) => (
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-        <Route exact path='/' component={() => <h1>Login</h1>} />
+        <Route exact path='/' component={() => <SignIn/>} />
         <Route exact path="/signup" component={() => <SignUp/>} />
-        <PrivateRoute path="/app" component={() => <h1>APP</h1>} />
+        <Route path="/main" component={() => <Main/>} />
         <Route path='*' component={() => <h1>404 - Page Not Found</h1>} />
     </Switch>
   </BrowserRouter>

@@ -1,45 +1,43 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, {img} from 'react';
+import {Formik} from 'formik'
 
-//import Logo from "../../assets/airbnb-logo.svg";
+import { Container, 
+  SignUpBox, 
+  SideBox, 
+  Input,
+  Button, 
+  Form} from './styles';
 
-import { Form, Container } from "./styles";
+import '../../global.css'
+import logo from '../../assets/Logo3.png'
 
-class SignUp extends Component {
-  state = {
-    github_user: "",
-    password: "",
-    
-  };
+export default function Login() {
+  return (
+    <Container>
 
-  handleSignUp = e => {
-    e.preventDefault();
-    alert("Eu vou te registrar");
-  };
+      
+      <SignUpBox>  
+        <Formik>
+          <Form>
+          <img src={logo}/>
+            <Input autocomplete="off" placeholder="GitHub User" name='gitUser'></Input>
+            <Input type="password" placeholder="Create a secret Password" name='pass'></Input>
+            <Input type="password" placeholder="Repeat your secret Password" name='pass'></Input>
+            <Button>SIGN UP</Button>
+          </Form>
 
-  render() {
-    return (
-      <Container>
-        <Form onSubmit={this.handleSignUp}>
           
-          
-          <input
-            type="text"
-            placeholder="Usuário no Github"
-            onChange={e => this.setState({ github_user: e.target.value })}
-          />
-          <input
-            type="password"
-            placeholder="Crie uma Senha Secreta"
-            onChange={e => this.setState({ password: e.target.value })}
-          />
-          <button type="submit">Cadastrar</button>
-          <hr />
-          <Link to="/">Fazer login</Link>
-        </Form>
-      </Container>
-    );
-  }
+        </Formik>  
+      </SignUpBox>
+      <SideBox>
+       <h1>Hello, Dev!</h1>
+       <h2>Create an Account and find some Devs arround you!</h2>
+       <p>Already have an Account?</p>
+       <Button>SIGN IN</Button>
+
+      </SideBox>
+
+
+    </Container>
+  );
 }
-
-export default SignUp;

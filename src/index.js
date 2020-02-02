@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom';
 
 import Routes from './routes'
 
-import App from './App';
+
+import Login from './pages/Login'
+import Signup from './pages/SignUp'
+import Main from './pages/Main'
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Routes />, document.getElementById('root'));

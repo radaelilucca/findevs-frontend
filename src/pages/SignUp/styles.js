@@ -1,70 +1,154 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+background: #7159c1;
+width: 100vw;
+height: 100vh;
 display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+align-items: center;
+justify-content: center;
 
+background: linear-gradient(240.84deg, 
+  #553AA2 0.09%, rgba(85, 58, 162, 0.95) 
+  16.86%, rgba(85, 58, 162, 0.9) 28.38%, 
+  rgba(85, 58, 162, 0.85) 39.87%, 
+  rgba(85, 58, 162, 0.75) 51.19%, 
+  rgba(85, 58, 162, 0.65) 62.48%, 
+  rgba(85, 58, 162, 0.55) 72.16%, 
+  rgba(85, 58, 162, 0.45) 84.15%, 
+  rgba(85, 58, 162, 0.4) 100%);
 
-
-
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
+
+export const SignUpBox = styled.div`
+width: 650px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 15px;
+`;
+
+
+export const SideBox = styled.div`
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 600px;
+height: 500px;
+background: #FFFFFF;
+border-radius: 15px;
+margin-left: 10px;
+
+Button {
+  width: 320px;
+  height: 60px;
+}
+
+h1 {
+font-style: normal;
+font-weight: bold;
+font-size: 75px;
+text-align: center;
+color: #553AA2;
+margin-bottom: 40px;
+}
+
+h2 {
+width: 90%;
+font-weight: bold;
+font-size: 38px;
+line-height: 40px;
+text-align: center;
+color: #666666;
+margin-bottom: 70px;
+margin-top: 25px;
+
+}
+
+p {
+margin-top: 25px;
+font-weight: bold;
+font-size: 28px;
+line-height: 41px;
+color: rgba(102, 102, 102, 0.75);
+}
+`;
+
 
 export const Form = styled.form`
-width: 400px;
-  background: #fff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  img {
-    width: 100px;
-    margin: 10px 0 40px;
-  }
-  p {
-    color: #ff3333;
-    margin-bottom: 15px;
-    border: 1px solid #ff3333;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-  }
-  input {
-    flex: 1;
-    height: 46px;
-    margin-bottom: 15px;
-    padding: 0 20px;
-    color: #777;
-    font-size: 15px;
-    width: 100%;
-    border: 1px solid #ddd;
-    &::placeholder {
-      color: #999;
-    }
-  }
-  button {
-    color: #fff;
-    font-size: 16px;
-    background: #fc6963;
-    height: 56px;
-    border: 0;
-    border-radius: 5px;
-    width: 100%;
-  }
-  hr {
-    margin: 20px 0;
-    border: none;
-    border-bottom: 1px solid #cdcdcd;
-    width: 100%;
-  }
-  a {
-    font-size: 16;
-    font-weight: bold;
-    color: #999;
-    text-decoration: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+img {
+  width: 45%;
+  margin-bottom: 10px;
+}
+
+`
+
+export const Title = styled.h1`
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+color: rgba(102, 102, 102, 0.95);
+margin-bottom: 30px;
+
+`
+
+export const Input = styled.input`
+width: 450px;
+height: 60px;
+background: rgba(85, 58, 162, 0.1);
+border: 3px solid #553AA2;
+box-sizing: border-box;
+border-radius: 15px;
+margin-bottom: 14px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+color: #573CA3;
+display: flex;
+align-items: center;
+text-align: center;
+transition: 0.1s linear;
+
+&:focus {
+    width: 485px;
   }
 
 
 
-`;
+`
+
+export const Button = styled.button`
+width: 460px;
+height: 78.15px;
+background: #573CA3;
+border-radius: 16px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 35px;
+line-height: 41px;
+color: #FFFFFF;
+margin-top: 20px;
+transition: 0.05s linear;
+
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+&:hover {
+    transform: scaleX(1.06);
+    background: #8e4dff;
+  }
+
+
+
+`
