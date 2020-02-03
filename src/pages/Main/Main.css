@@ -8,6 +8,7 @@
 }
 
 aside {
+  border: 3px solid rgba(85, 58, 162, 1);
   width: 450px;
   height: 590px;
   display: flex;

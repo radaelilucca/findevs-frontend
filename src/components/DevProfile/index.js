@@ -9,73 +9,34 @@ import { FaUserEdit, FaEyeSlash} from 'react-icons/fa';
 import { Container, Buttons, DevTechs} from './styles';
 
 
-function DevProfile({ onSubmit }) {
-  const [github_user, setGithub_user] = useState('');
-  const [techs, setTechs] = useState('');
-  const [latitude, setLatitude] = useState('');
-  const [longitude, setLongitude] = useState('');
-  const [isValid, setIsValid] = useState(true);
+function DevProfile({ dev }) {
 
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-
-        setLatitude(latitude);
-        setLongitude(longitude);
-      },
-      (err) => {
-        console.log(err);
-      },
-      {
-        timeout: 30000,
-      },
-    );
-  }, []);
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setIsValid(true);
-
-    if (github_user === '') {
-      setIsValid(false);
-    }
-    await onSubmit({
-      github_user,
-      techs,
-      latitude,
-      longitude,
-    });
-    setGithub_user('');
-    setTechs('');
-    setIsValid(true);
-  }
-
-  return (
+   return (
     <>  
     <Container>
-    <img src="https://avatars2.githubusercontent.com/u/29178479?v=4" alt="DevName"/>
-      <h1>Lucca Radaeli</h1>
-      <h3>@radaelilucca</h3>
-      <p>Aluno do GoStack, 
-        Bootcamp da @Rocketseat! 
-        Estudando NodeJS, 
-        React e ReactNative!
+      <img src={dev.avatar_url} alt={dev.github_user}/>
+      <h1>{dev.name}</h1>        
+      <h3>{dev.github_user}</h3>
+      <p>{dev.bio}
        </p>
         <DevTechs>
-        <p>{`< NODEJS, REACTJS, REACT NATIVE >`}</p>
+        <p>{dev.techs}</p>
         </DevTechs>
         
         <Buttons>
 
         <div>
-        <button><FaUserEdit/></button>
+        <button onClick={() => {
+            alert("Funcionalidade Em Desenvolvimento")
+          }} ><FaUserEdit/></button>
         <p>Edit Profile</p>
         </div>
 
         <div>
-        <button><FaEyeSlash/> </button>
+        <button onClick={() => {
+            alert("Funcionalidade Em Desenvolvimento")
+          }} ><FaEyeSlash/> </button>
         <p>Hide Yourself</p>
         </div>
 

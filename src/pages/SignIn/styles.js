@@ -84,6 +84,12 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 
+.icon{
+  font-size: 35px;
+  color: #553AA2;
+  
+}
+
 img {
   width: 40%
 }
@@ -100,7 +106,10 @@ margin-bottom: 30px;
 
 `
 
-export const Input = styled.input`
+export const InputGroup = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
 width: 450px;
 height: 70px;
 background: rgba(85, 58, 162, 0.1);
@@ -108,6 +117,13 @@ border: 3px solid #553AA2;
 box-sizing: border-box;
 border-radius: 15px;
 margin-bottom: 14px;
+transition: 0.1s linear;
+
+`
+export const Input = styled.input`
+width: 90%;
+background: none;
+border: 0;
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
@@ -116,13 +132,6 @@ color: #573CA3;
 display: flex;
 align-items: center;
 text-align: center;
-transition: 0.1s linear;
-
-&:focus {
-    width: 485px;
-  }
-
-
 
 `
 

@@ -2,6 +2,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 
+import jwt from 'jsonwebtoken'
+import {promisify} from 'util'
+
+import authConfig from '../../config/auth'
+
 import api from '../../services/api';
 
 import '../../global.css';
@@ -15,16 +20,38 @@ import logo from '../../assets/Logo3.png';
 
 function Main() {
   const [devs, setDevs] = useState([]);
+  const [loggedDev, setLoggedDev] = useState('')
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     async function loadDevs() {
       const response = await api.get('/devs');
 
       setDevs(response.data);
+
+      const token = localStorage.getItem('findevs-token')
+      const decoded = await promisify(jwt.verify)(token, authConfig.secret);
+      const {github_user} = decoded
+
+      const responseDev = await api.get(`/dev/${github_user}`)
+      
+      setLoggedDev(responseDev.data.dev);
+
+      console.log(loggedDev.name)
+
+      setLoaded(true)
     }
 
     loadDevs();
-  }, [devs]);
+  }, [loaded]);
+
+  useEffect(() => {
+    async function loadLoggedDev() {
+      
+    }
+
+    loadLoggedDev()
+  }, []);
 
   async function handleAddDev(data) {
     const response = await api.post('/devs', data);
@@ -33,27 +60,30 @@ function Main() {
   }
 
   async function handleInativeDev(data) {
-
-    console.log(data)
-    
+     
     await api.put(`/devs/delete/${data}`);
-    console.log(data.github_user)
-    
+    console.log(data.github_user)    
 
     const filterDevs = devs.filter(
       dev => dev.github_user !== data.github_user
-    );
-
-    console.log(filterDevs)
+    ); 
 
     setDevs(filterDevs);
   }
 
+  // trata o token recibibo do login
+  useEffect(async () => {
+    
+   
+  }, [])
+
+
 
   return (
+    
     <div id="main">
-      <aside>            
-        <DevProfile  />      
+      <aside>
+        <DevProfile dev={loggedDev} key={loggedDev.name}/>            
         </aside>  
       <main>
         <ul>

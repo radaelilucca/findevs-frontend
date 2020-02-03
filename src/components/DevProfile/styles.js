@@ -8,6 +8,7 @@ align-items: center;
 justify-content: center;
 background: #FFF;
 
+
 img {
   width: 160px;
   height: 160px;
@@ -17,9 +18,9 @@ img {
   transition: 0.1s linear;
 
     &:hover{
-    transform: scale(1.3);
+    transform: scale(1.1);
     margin-bottom: 35px;
-    margin-top: 25px;
+    margin-top: 5px;
     border-radius: 5px;   
 
         }
@@ -56,12 +57,10 @@ export const DevTechs = styled.div`
 
 p {
   margin-top: 35px;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
   color: #222;
   font-size: 20px;
 }
-
-
 
 `
 
@@ -71,11 +70,9 @@ margin-top: 35px;
 display: flex;
 justify-content: space-between;
 width: 100%;
-
 div {
   display: flex;
   margin-top: 40px;
-
     p{
       font-family: Roboto;
       font-style: normal;
@@ -83,20 +80,22 @@ div {
       font-size: 18px;
       text-align: center;
       margin-left: 10px;
-      color: rgba(85, 58, 162, 0.62);
+      color: rgba(85, 58, 162, 0.62);   
+
+      } 
     }
-}
 
 button {
-cursor: pointer;
-background: none;
-border: none;
-font-size: 35px; 
-color: rgba(85, 58, 162,1);
-  
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 35px; 
+  color: rgba(85, 58, 162,1);
+    &:hover {
+      color: #8e4dff
+    }
+
 }
-
-
 
 `
 

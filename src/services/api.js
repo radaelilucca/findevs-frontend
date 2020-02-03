@@ -2,7 +2,7 @@ import axios from 'axios';
 import {getToken} from './auth'
 
 const api = axios.create({
-  baseURL: 'https://findevs-backend.herokuapp.com/',
+  baseURL: 'http://localhost:3333',
 });
 
 api.interceptors.request.use(async config => {
@@ -13,6 +13,4 @@ api.interceptors.request.use(async config => {
   }
   return config;
 })
-
-
 export default api;

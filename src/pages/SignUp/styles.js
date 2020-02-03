@@ -40,7 +40,7 @@ width: 600px;
 height: 500px;
 background: #FFFFFF;
 border-radius: 15px;
-margin-left: 10px;
+margin-right: 10px;
 
 Button {
   width: 320px;
