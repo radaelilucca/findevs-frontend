@@ -10,12 +10,14 @@ import { Container,
   Form,
   InputGroup} from './styles';
 
+//import history from '../../services/history'
+
 import '../../global.css'
 import logo from '../../assets/Logo3.png'
 
 import api from '../../services/api'
 
-function SignIn () {
+function SignIn ({history}) {
 const [gitUser, setGitUser] = useState('')
 const [password, setPassword] = useState('')
 
@@ -30,6 +32,7 @@ async function handleSubmit(e) {
 
   localStorage.setItem('findevs-token', token)
   alert('Sucess')
+  history.push('/app')
 
   } catch (error) {
     alert('Login Fail')
@@ -38,13 +41,7 @@ async function handleSubmit(e) {
 }
 
 useEffect(() => {
-
-
 }, [])
-
-
-
-
 
   return (
     <Container>      
