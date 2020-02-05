@@ -1,20 +1,20 @@
-import React from 'react'
-import {Router} from 'react-router-dom'
+import React from 'react';
+import { Router } from 'react-router-dom';
 
-import history from './services/history'
+import history from './services/history';
 
-import './global.css'
+import './global.css';
 
-import Routes from './routes'
+import Routes from './routes';
 
-function App(){
+function App() {
   return (
     <>
-    <Router history={history}>  
-    <Routes />    
-    </Router> 
+      <Router history={history}>
+        <Routes />
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

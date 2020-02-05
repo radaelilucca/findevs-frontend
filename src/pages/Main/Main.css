@@ -7,14 +7,15 @@
   justify-content: center;
 }
 
-aside {
-  border: 3px solid rgba(85, 58, 162, 1);
+aside {  
   width: 450px;
   height: 590px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 8px 8px 5px rgba(85, 58, 162, 0.3);
+  border: 1px solid rgba(85, 58, 162, 0.3);
 }
 
 @media(max-width: 650px){ 
@@ -45,8 +46,6 @@ main ul {
   list-style: none;
 
 }
-
-
 
 @media(max-width: 650px){ 
   main {

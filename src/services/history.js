@@ -1,5 +1,6 @@
-import { createBrowserHistory } from 'history'
+// eslint-disable-next-line import/no-unresolved
+import { createBrowserHistory } from 'history';
 
-const history = createBrowserHistory()
+const history = createBrowserHistory();
 
-export default history
+export default history;
