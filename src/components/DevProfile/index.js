@@ -4,11 +4,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { FaUserEdit, FaEyeSlash } from 'react-icons/fa';
+import { FaUserEdit, FaEyeSlash, FaSignOutAlt } from 'react-icons/fa';
+
+
 
 import { Container, Buttons, DevTechs } from './styles';
 
-function DevProfile({ dev }) {
+function DevProfile({dev, logout} ) {
+    
   return (
     <>
       <Container>
@@ -41,6 +44,14 @@ function DevProfile({ dev }) {
               <FaEyeSlash />{' '}
             </button>
             <p>Hide Yourself</p>
+          </div>
+          <div>
+            <button
+              onClick={logout}
+            >
+              <FaSignOutAlt />{' '}
+            </button>
+            <p>SignOut</p>
           </div>
         </Buttons>
       </Container>

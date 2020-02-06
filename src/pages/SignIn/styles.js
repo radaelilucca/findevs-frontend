@@ -26,8 +26,8 @@ export const Container = styled.div`
 `;
 
 export const LoginBox = styled.div`
-  width: 600px;
-  height: 500px;
+  width: 490px;
+  height: 450px;
   background: #ffffff;
   border-radius: 15px;
 `;
@@ -37,23 +37,20 @@ export const SideBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 600px;
-  height: 500px;
+  width: 490px;
+  height: 450px;
   background: #ffffff;
   border-radius: 15px;
   margin-left: 10px;
 
-  button {
-    width: 320px;
-    height: 60px;
-  }
+
 
   h1 {
-    width: 75%;
+    width: 65%;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 45px;
     line-height: 94px;
     text-align: center;
     line-height: 60px;
@@ -64,7 +61,7 @@ export const SideBox = styled.div`
   h2 {
     font-style: normal;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 30px;
     color: #555555;
     margin-bottom: 60px;
   }
@@ -72,8 +69,12 @@ export const SideBox = styled.div`
   p {
     font-style: normal;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     color: rgba(102, 102, 102, 0.85);
+  }
+
+  button {
+    opacity: 0.95;
   }
 `;
 
@@ -89,7 +90,7 @@ export const Form = styled.form`
   }
 
   img {
-    width: 40%;
+    width: 45%;
   }
 `;
 
@@ -97,8 +98,8 @@ export const Title = styled.h1`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
-  color: rgba(102, 102, 102, 0.95);
+  font-size: 30px;
+  color: rgba(102, 102, 102, 0.55);
   margin-bottom: 30px;
 `;
 
@@ -106,14 +107,15 @@ export const InputGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 450px;
-  height: 70px;
-  background: rgba(85, 58, 162, 0.1);
-  border: 3px solid #553aa2;
+  width: 380px;
+  height: 60px;  
+  border-bottom: 2px solid #553aa2;
   box-sizing: border-box;
-  border-radius: 15px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   transition: 0.1s linear;
+  &:hover{
+    width: 410px;
+  }
 `;
 export const Input = styled.input`
   width: 90%;
@@ -122,16 +124,19 @@ export const Input = styled.input`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   color: #573ca3;
+  opacity: 0.8;
   display: flex;
   align-items: center;
   text-align: center;
+
+  
 `;
 
 export const Button = styled.button`
-  width: 460px;
-  height: 78.15px;
+  width: 300px;
+  height: 55px;
   background: #573ca3;
   border-radius: 16px;
   font-family: Roboto;

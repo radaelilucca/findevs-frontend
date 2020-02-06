@@ -42,8 +42,6 @@ function SignIn({ history }) {
       const { token } = response.data;
 
       localStorage.setItem('findevs-token', token);
-      alert('Sucess');
-      console.log(history);
 
       history.push('/app');
     } catch (err) {
@@ -66,7 +64,7 @@ function SignIn({ history }) {
               placeholder="GitHub User"
               name="gitUser"
               value={gitUser}
-              onChange={e => setGitUser(e.target.value)}
+              onChange={(e) => setGitUser(e.target.value)}
             />
           </InputGroup>
           <InputGroup>
@@ -76,7 +74,7 @@ function SignIn({ history }) {
               placeholder="Password"
               name="pass"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </InputGroup>
           <Button type="submit">SIGN IN</Button>

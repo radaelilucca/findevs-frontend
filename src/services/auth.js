@@ -11,8 +11,6 @@ export const isAuthenticaded = () => localStorage.getItem(TOKEN_KEY) !== null;
 
 const getToken = () => localStorage.getItem('findevs-token');
 
-export const logout = () => {
-  localStorage.removeItem(TOKEN_KEY);
-};
+
 
 export { getToken };

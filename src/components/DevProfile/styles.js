@@ -67,10 +67,10 @@ export const Buttons = styled.div`
       font-family: Roboto;
       font-style: normal;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 15px;
       text-align: center;
       margin-left: 10px;
-      color: rgba(85, 58, 162, 0.62);
+      color: rgba(85, 58, 162, 0.42);
     }
   }
 
