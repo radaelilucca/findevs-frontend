@@ -1,9 +1,16 @@
+/* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import { Formik } from 'formik';
 // import Swal from 'sweetalert2';
 
-import { FaGithubAlt, FaKey, FaCompass, FaCode } from 'react-icons/fa';
-import { Container, SignUpBox, SideBox, Button, Form } from './styles';
+import {
+  FaGithubAlt, FaKey, FaCompass, FaCode,
+} from 'react-icons/fa';
+import {
+  Container, SignUpBox, SideBox, Button, Form,
+} from './styles';
 
 import api from '../../services/api';
 import '../../global.css';
@@ -14,6 +21,9 @@ export default function SignUp({ history }) {
     e.preventDefault();
 
     try {
+      if (confirmPassword !== password) {
+        throw 'Password Does Not Match';
+      }
       await api.post('/devs', {
         github_user: gitUser,
         password,
@@ -24,8 +34,7 @@ export default function SignUp({ history }) {
 
       history.push('/');
     } catch (error) {
-      console.log(error);
-      alert('Error');
+      alert(error);
     }
   }
 
@@ -39,19 +48,19 @@ export default function SignUp({ history }) {
   // get browser location
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      position => {
+      (position) => {
         const { latitude, longitude } = position.coords;
 
         setLatitude(latitude);
         setLongitude(longitude);
       },
 
-      err => {
+      (err) => {
         console.log(err);
       },
       {
         timeout: 30000,
-      }
+      },
     );
   }, []);
 
@@ -78,7 +87,7 @@ export default function SignUp({ history }) {
               id="github_user"
               placeholder="GitHub User"
               required
-              onChange={e => {
+              onChange={(e) => {
                 setGitUser(e.target.value);
               }}
             />
@@ -94,7 +103,7 @@ export default function SignUp({ history }) {
               type="password"
               placeholder="Password"
               required
-              onChange={e => {
+              onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
@@ -104,7 +113,7 @@ export default function SignUp({ history }) {
               type="password"
               placeholder="Confirm Password"
               required
-              onChange={e => {
+              onChange={(e) => {
                 setConfirmPassword(e.target.value);
               }}
             />
@@ -119,7 +128,7 @@ export default function SignUp({ history }) {
               id="techs"
               placeholder="Your main Techs splited by comma"
               required
-              onChange={e => {
+              onChange={(e) => {
                 setTechs(e.target.value);
               }}
             />
@@ -136,7 +145,7 @@ export default function SignUp({ history }) {
                 id="Latitude"
                 placeholder="Latitude"
                 value={latitude}
-                onChange={e => setLatitude(e.target.value)}
+                onChange={(e) => setLatitude(e.target.value)}
               />
               <input
                 name="Longitude"
@@ -144,11 +153,13 @@ export default function SignUp({ history }) {
                 id="Longitude"
                 placeholder="Longitude"
                 value={longitude}
-                onChange={e => setLongitude(e.target.value)}
+                onChange={(e) => setLongitude(e.target.value)}
               />
             </div>
           </div>
           <button type="submit">New Dev</button>
+
+
         </Form>
       </SignUpBox>
     </Container>

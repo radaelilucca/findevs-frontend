@@ -22,6 +22,7 @@ import DevProfile from '../../components/DevProfile';
 function Main({ history }) {
   const [devs, setDevs] = useState([]);
   const [loggedDev, setLoggedDev] = useState('');
+  const [loaded, setLoaded] = useState(false);
 
 
   // load devs
@@ -43,9 +44,16 @@ function Main({ history }) {
 
       setLoggedDev(response.data);
     }
+
     loadLoggedDev();
     loadDevs();
+    setLoaded(true);
   }, []);
+
+  useEffect(() => {
+
+
+  }, [loggedDev]);
 
   // inative user - disable
   async function handleInativeDev(data) {
@@ -63,10 +71,11 @@ function Main({ history }) {
     history.push('/');
   }
 
+
   return (
     <div id="main">
       <aside>
-        <DevProfile dev={loggedDev} key={loggedDev.name} logout={logout} />
+        <DevProfile dev={loggedDev} loaded={loaded} key={loggedDev.name} logout={logout} />
       </aside>
       <main>
         <ul>

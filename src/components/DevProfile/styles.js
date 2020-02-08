@@ -38,21 +38,37 @@ export const Container = styled.div`
     margin-bottom: 20px;
   }
 
+  a {
+
+    text-decoration: none
+  }
+
   p {
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 19px;
     text-align: center;
     color: #999999;
   }
 `;
+
 export const DevTechs = styled.div`
-  p {
-    margin-top: 35px;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+
+
+ .code-tag {
+  color: rgba(85, 58, 162, 1);
+ }
+
+
+  p {    
     color: #222;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    opacity: 0.8;    
   }
+  
 `;
 
 export const Buttons = styled.div`
