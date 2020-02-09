@@ -5,9 +5,6 @@ import Swal from 'sweetalert2';
 import { FaGithubAlt, FaLock } from 'react-icons/fa';
 
 import {
-  Container,
-  LoginBox,
-  SideBox,
   Title,
   Input,
   Button,
@@ -57,6 +54,7 @@ export default function SignInForm({ history }) {
           placeholder="GitHub User"
           name="gitUser"
           value={gitUser}
+          required
           onChange={(e) => setGitUser(e.target.value)}
         />
       </InputGroup>
@@ -66,6 +64,7 @@ export default function SignInForm({ history }) {
           type="password"
           placeholder="Password"
           name="pass"
+          required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
