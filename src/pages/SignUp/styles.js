@@ -25,77 +25,16 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
+
 export const SignUpBox = styled.div`
-  width: 490px;
-  height: 450px;
+  width: 400px;
+  height: 520px;
   background: #ffffff;
   border-radius: 15px;
-`;
 
-export const SideBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 490px;
-  height: 450px;
-  background: #ffffff;
-  border-radius: 15px;
-  margin-right: 10px;
+  @media (max-width: 415px){
+    width: 80%;
+    height: 540px;
 
-  h1 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 55px;
-    text-align: center;
-    color: #553aa2;
-    margin-top: 20px;
-    
-  }
-
-  h2 {
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 40px;
-    text-align: center;
-    color: #666666;
-    margin-bottom: 45px;
-    margin-top: 70px;
-  }
-.login-option {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  p {    
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 41px;
-    color: rgba(102, 102, 102, 0.75);
-  }
-
-}
- 
-`;
-
-
-export const Button = styled.button`
-  background: rgba(87, 60, 163, 0.95);
-  border-radius: 16px;
-  width: 250px;
-  height: 40px;
-  align-self: center;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.1s linear;
-
-
-  &:hover {
-    transform: scale(1.1);
-    background: #8100e5;
-    font-weight: bold;
   }
 `;

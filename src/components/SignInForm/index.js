@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 import { FaGithubAlt, FaLock } from 'react-icons/fa';
 
@@ -10,6 +11,7 @@ import {
   Button,
   Form,
   InputGroup,
+
 } from './styles';
 
 import logo from '../../assets/Logo3.png';
@@ -47,7 +49,7 @@ export default function SignInForm({ history }) {
   return (
     <Form onSubmit={handleSubmit}>
       <img src={logo} alt="FinDevs" />
-      <Title>Sign in</Title>
+      <Title>Welcome back, Dev!</Title>
       <InputGroup>
         <FaGithubAlt className="icon" />
         <Input
@@ -67,9 +69,15 @@ export default function SignInForm({ history }) {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+
         />
       </InputGroup>
-      <Button type="submit">SIGN IN</Button>
+      <Button type="submit">Login</Button>
+
+      <p>Dont hanve and account yet?</p>
+      <Link to="/signup"> Create an Account</Link>
     </Form>
+
+
   );
 }

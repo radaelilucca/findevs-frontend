@@ -16,7 +16,7 @@ function DevProfile({ dev, logout, handleHide }) {
       <Container>
         <img src={dev.avatar_url} alt={dev.github_user} />
         <h1>{dev.name}</h1>
-        <a href={`http://github.com/${dev.github_user}`} target="blank">
+        <a title="Go to your GitHub" href={`http://github.com/${dev.github_user}`} target="blank">
           <h3>
             @
             {dev.github_user}
@@ -33,9 +33,11 @@ function DevProfile({ dev, logout, handleHide }) {
         <Buttons>
           <div>
             <button
-              onClick={() => {
-                alert('This feat is under construction for now!');
-              }}
+              title="Edit Profile"
+              type="button"
+              // onClick={() => {
+                // alert('This feat is under construction for now!');
+              // }}
             >
               <FaUserEdit />
             </button>
@@ -44,16 +46,18 @@ function DevProfile({ dev, logout, handleHide }) {
 
           <div>
             <button
-              onClick={handleHide}
+            //  onClick={handleHide}
+              title="Hide yourself!"
             >
               <FaEyeSlash />
               {' '}
             </button>
             <p>Hide Yourself</p>
           </div>
-          <div>
+          <div className="logout">
             <button
               onClick={logout}
+              title="Logout"
             >
               <FaSignOutAlt />
               {' '}

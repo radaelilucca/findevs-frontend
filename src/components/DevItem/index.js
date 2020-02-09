@@ -6,26 +6,7 @@ import './styles.css';
 
 // import Swal from 'sweetalert2'
 
-export default function DevItem({ dev, deletar }) {
-  // async function handleRemoveUser() {
-  // await Swal.fire({
-  //   title: 'Remover Usuário',
-  // text: 'Você tem certeza que quer remover o usuário?',
-  //  icon: 'warning',
-  //  showCancelButton: true,
-  //  cancelButtonColor: '#FF6E6E',
-  //  confirmButtonColor: '#7159c1',
-  //  reverseButtons: true,
-  //   confirmButtonText: 'Sim, remover usuário!',
-  //   cancelButtonText: 'Cancelar',
-  // }).then(async result => {
-  //   if (result.value) {
-  //    await deletar(dev.github_user);
-  //     Swal.fire('Removido!', 'Usuário removido com sucesso.', 'success');
-  //   }
-  //  });
-  // }
-
+export default function DevItem({ dev }) {
   return (
     <li className="dev-item">
       <header>
@@ -40,34 +21,31 @@ export default function DevItem({ dev, deletar }) {
 
       <div className="dev-buttons">
         <a
-          id="github"
           href={`https://github.com/${dev.github_user}`}
           target="blank"
         >
           <button
             title={`Check ${dev.name}'s Github`}
             type="button"
+            className="github-button"
           >
             <FaGithubAlt />
           </button>
         </a>
         <button
           className="map-button"
-          title={`See ${dev.name} in the map!`}
+          title="This feat is under construction for now!"
           type="button"
-          onClick={() => {
-            alert('This feat is under construction for now!');
-          }}
+
 
         >
           <FaMapMarkedAlt />
         </button>
         <button
-          title={`Block ${dev.name}!`}
+          title="This feat is under construction for now!"
           type="button"
-          onClick={() => {
-            alert('This feat is under construction for now!');
-          }}
+          className="block-button"
+
 
         >
           <FaBan />

@@ -74,7 +74,7 @@ function Main({ history }) {
       <main>
         <ul>
           {devs.map((dev) => (
-            <DevItem dev={dev} key={dev._id} />
+            <DevItem id="dev-card" dev={dev} key={dev._id} />
           ))}
         </ul>
       </main>

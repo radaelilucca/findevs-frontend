@@ -1,13 +1,14 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import Swal from 'sweetalert2';
 
 import {
   FaGithubAlt, FaKey, FaCompass, FaCode,
 } from 'react-icons/fa';
 
-import { Form } from './styles';
+import { Form, CreateAccount, InputGroup } from './styles';
 
 import api from '../../services/api';
 import logo from '../../assets/Logo3.png';
@@ -30,7 +31,7 @@ export default function SignUpForm({ history }) {
       },
 
       (err) => {
-        console.log(err);
+
       },
       {
         timeout: 30000,
@@ -72,70 +73,71 @@ export default function SignUpForm({ history }) {
   }
 
   return (
+    <>
+      <Form onSubmit={handleSubmit}>
+        <img src={logo} alt="FinDevs" />
 
-    <Form onSubmit={handleSubmit}>
-      <img src={logo} alt="FinDevs" />
-
-      <div className="input-block">
-        <label htmlFor="GitHub User">
-          <FaGithubAlt />
-        </label>
-        <input
-          name="github_user"
-          id="github_user"
-          placeholder="GitHub User"
-          required
-          onChange={(e) => {
-            setGitUser(e.target.value);
-          }}
-        />
-      </div>
-
-      <div className="input-block">
-        <label htmlFor="password">
-          <FaKey />
-        </label>
-        <input
-          name="password"
-          id="password"
-          type="password"
-          placeholder="Password"
-          required
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          value={password}
-        />
-        <input
-          name="confirmPassword"
-          id="confirmPassword"
-          type="password"
-          placeholder="Confirm Password"
-          required
-          onChange={(e) => {
-            setConfirmPassword(e.target.value);
-          }}
-          value={confirmPassword}
-        />
-      </div>
-
-      <div className="input-block">
-        <label htmlFor="techs">
-          <FaCode />
-        </label>
-        <input
-          name="techs"
-          id="techs"
-          placeholder="Your main Techs splited by comma"
-          required
-          onChange={(e) => {
-            setTechs(e.target.value);
-          }}
-        />
-      </div>
-
-      <div className="input-group">
         <div className="input-block">
+          <label htmlFor="GitHub User">
+            <FaGithubAlt />
+          </label>
+          <input
+            name="github_user"
+            id="github_user"
+            placeholder="GitHub User"
+            required
+            onChange={(e) => {
+              setGitUser(e.target.value);
+            }}
+          />
+        </div>
+
+        <div className="password-block">
+          <label htmlFor="password">
+            <FaKey />
+          </label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            placeholder="Password"
+            required
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            value={password}
+            suggested="new-password"
+          />
+          <input
+            name="confirmPassword"
+            id="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+            required
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+            }}
+            value={confirmPassword}
+          />
+        </div>
+
+        <div className="techs-block">
+          <label htmlFor="techs">
+            <FaCode />
+          </label>
+          <input
+            name="techs"
+            id="techs"
+            placeholder="Your main Techs splited by comma"
+            required
+            onChange={(e) => {
+              setTechs(e.target.value);
+            }}
+          />
+        </div>
+
+
+        <div className="location-block">
           <label htmlFor="location">
             <FaCompass />
           </label>
@@ -156,13 +158,19 @@ export default function SignUpForm({ history }) {
             onChange={(e) => setLongitude(e.target.value)}
           />
 
+
         </div>
-      </div>
 
-      <button type="submit">New Dev</button>
+        <button type="submit">New Dev</button>
 
 
-    </Form>
-
+      </Form>
+      <CreateAccount>
+        <p>Already have an Account?</p>
+        <Link to="/">
+          Login
+        </Link>
+      </CreateAccount>
+    </>
   );
 }
