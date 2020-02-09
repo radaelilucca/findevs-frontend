@@ -6,19 +6,19 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background: #fff;
+  width: 100%;
+  height: 100%; 
 
   img {
-    width: 160px;
-    height: 160px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    margin-bottom: 10px;
     border: 3px solid rgba(85, 58, 162, 1);
     transition: 0.1s linear;
 
     &:hover {
-      transform: scale(1.1);
-      margin-bottom: 10px;
-      margin-top: 5px;
+      transform: scale(1.1);      
+      margin-top: 25px;      
       border-radius: 5px;
     }
   }
@@ -27,15 +27,19 @@ export const Container = styled.div`
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 26px;
     color: #444444;
+    margin-top: 5px;
+    
   }
 
   h3 {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     color: rgba(85, 58, 162, 0.62);
-    margin-bottom: 20px;
+    margin-bottom: 15px
+    
+    
   }
 
   a {
@@ -44,7 +48,9 @@ export const Container = styled.div`
   }
 
   p {
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    
     font-weight: 500;
     font-size: 19px;
     text-align: center;
@@ -55,38 +61,30 @@ export const Container = styled.div`
 export const DevTechs = styled.div`
   display: flex;
   align-items: center;
-
-
- .code-tag {
-  color: rgba(85, 58, 162, 1);
- }
-
-
   p {    
     color: #222;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     opacity: 0.8; 
-    margin-top: 50px;   
   }
   
 `;
 
 export const Buttons = styled.div`
-  margin-top: 35px;
+ 
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 40px;
+
   div {
     display: flex;
-    margin-top: 40px;
+   
     p {
       font-family: Roboto;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 15px;
+      font-size: 13px;
       text-align: center;
-      margin-left: 10px;
+      margin-left: 5px;
       color: rgba(85, 58, 162, 0.42);
     }
   }
@@ -95,7 +93,7 @@ export const Buttons = styled.div`
     cursor: pointer;
     background: none;
     border: none;
-    font-size: 35px;
+    font-size: 28px;
     color: rgba(85, 58, 162, 1);
     &:hover {
       color: #8e4dff;
