@@ -15,15 +15,39 @@ export const Form = styled.form`
   img {
     width: 45%;
   }
+
+  p{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #8888;
+    opacity: 0.9;
+  }
+
+  a {
+    font-size: 25px;
+    text-decoration: none;
+    margin-top: 5px;
+  }
+
+  @media (max-width: 400px){
+    img {
+      width: 60%;
+    }
+
+  }
 `;
 
 export const Title = styled.h1`
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 30px;
   color: rgba(102, 102, 102, 0.55);
   margin-bottom: 30px;
+  @media (max-width: 400px){
+    font-size: 20px;
+
+  } 
 `;
 
 export const InputGroup = styled.div`
@@ -37,8 +61,13 @@ export const InputGroup = styled.div`
   margin-bottom: 18px;
   transition: 0.1s linear;
   &:hover{
-    width: 410px;
+    width: 95%;
   }
+  @media (max-width: 400px){
+    width: 280px;
+    height: 50px; 
+
+  } 
 `;
 export const Input = styled.input`
   width: 90%;
@@ -46,32 +75,31 @@ export const Input = styled.input`
   border: 0;
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 25px;
   color: #573ca3;
-  opacity: 0.8;
+  opacity: 0.6;
   display: flex;
   align-items: center;
-  text-align: center;
-
-  
+  text-align: center;  
 `;
 
 export const Button = styled.button`
-  width: 300px;
+  width: 200px;
   height: 55px;
-  background: #573ca3;
+  background: #573c99;
   border-radius: 16px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 35px;
   line-height: 41px;
   color: #ffffff;
   margin-top: 20px;
+  margin-bottom: 20px;
   transition: 0.05s linear;
-
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 
   &:hover {
     transform: scaleX(1.06);

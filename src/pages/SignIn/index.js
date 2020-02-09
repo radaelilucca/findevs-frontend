@@ -28,20 +28,9 @@ function SignIn({ history }) {
 
   return (
     <Container>
-
       <LoginBox>
         <SignInForm history={history} />
       </LoginBox>
-
-      <SideBox>
-        <h1>Wellcome back, Dev!</h1>
-        <h2>Log in to find other Devs!</h2>
-        <p>Don't have an Account yet?</p>
-        <Link to="/signup">
-          <Button>SIGN UP</Button>
-        </Link>
-      </SideBox>
-
     </Container>
   );
 }
