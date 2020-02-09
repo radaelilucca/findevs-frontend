@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
-import { useFormik } from 'formik';
 import {
   FaGithubAlt, FaKey, FaCompass, FaCode,
 } from 'react-icons/fa';
@@ -12,48 +13,69 @@ import api from '../../services/api';
 import logo from '../../assets/Logo3.png';
 
 export default function SignUpForm({ history }) {
-  async function handleSubmit(values) {
-    values.preventDefault();
-    alert('chamou');
-    console.log(values);
-  }
+  const [gitUser, setGitUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [techs, setTechs] = useState([]);
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
 
-  const formik = useFormik({
-    initialValues: {
-      github_user: '',
-      password: '',
-      confirmPassword: '',
-      techs: '',
-      latitude: '9999',
-      longitude: '1010',
-    },
-    onSubmit: async ({
-      github_user, password, confirmPassword, techs, latitude, longitude,
-    }) => {
-      try {
-        console.log('entrou try');
-        await api.post('/devs', {
-          github_user,
-          password,
-          confirmPassword,
-          techs,
-          latitude,
-          longitude,
-        });
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
 
-        history.push('/');
-      } catch (error) {
-        console.log(error);
-        alert('Error');
+        setLatitude(latitude);
+        setLongitude(longitude);
+      },
+
+      (err) => {
+        console.log(err);
+      },
+      {
+        timeout: 30000,
+      },
+    );
+  }, []);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      if (confirmPassword !== password) {
+        setConfirmPassword('');
+        setPassword('');
+        throw 'Passwords does not match.';
       }
-    },
 
-  });
+      if (password.length < 6) {
+        setConfirmPassword('');
+        setPassword('');
+        throw 'This password is too short! (min 6 characters)';
+      }
+
+      const newDev = await api.post('/devs', {
+        github_user: gitUser,
+        password,
+        techs,
+        latitude,
+        longitude,
+      });
+      history.push('/');
+    } catch (err) {
+      await Swal.fire({
+        title: err.response ? err.response.data.error : err,
+        icon: 'error',
+        confirmButtonColor: '#7159c1',
+      });
+    }
+  }
 
   return (
 
-    <Form onSubmit={formik.handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <img src={logo} alt="FinDevs" />
+
       <div className="input-block">
         <label htmlFor="GitHub User">
           <FaGithubAlt />
@@ -63,9 +85,9 @@ export default function SignUpForm({ history }) {
           id="github_user"
           placeholder="GitHub User"
           required
-          value={formik.values.github_user}
-          onChange={formik.handleChange}
-
+          onChange={(e) => {
+            setGitUser(e.target.value);
+          }}
         />
       </div>
 
@@ -79,9 +101,10 @@ export default function SignUpForm({ history }) {
           type="password"
           placeholder="Password"
           required
-          value={formik.values.password}
-          onChange={formik.handleChange}
-
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+          value={password}
         />
         <input
           name="confirmPassword"
@@ -89,9 +112,10 @@ export default function SignUpForm({ history }) {
           type="password"
           placeholder="Confirm Password"
           required
-          value={formik.values.confirmPassword}
-          onChange={formik.handleChange}
-
+          onChange={(e) => {
+            setConfirmPassword(e.target.value);
+          }}
+          value={confirmPassword}
         />
       </div>
 
@@ -104,9 +128,9 @@ export default function SignUpForm({ history }) {
           id="techs"
           placeholder="Your main Techs splited by comma"
           required
-          value={formik.values.techs}
-          onChange={formik.handleChange}
-
+          onChange={(e) => {
+            setTechs(e.target.value);
+          }}
         />
       </div>
 
@@ -120,23 +144,21 @@ export default function SignUpForm({ history }) {
             type="number"
             id="Latitude"
             placeholder="Latitude"
-            value={formik.values.latitude}
-            onChange={formik.handleChange}
-
-
+            value={latitude}
+            onChange={(e) => setLatitude(e.target.value)}
           />
           <input
             name="Longitude"
             type="number"
             id="Longitude"
             placeholder="Longitude"
-            value={formik.values.longitude}
-            onChange={formik.handleChange}
-
-
+            value={longitude}
+            onChange={(e) => setLongitude(e.target.value)}
           />
+
         </div>
       </div>
+
       <button type="submit">New Dev</button>
 
 

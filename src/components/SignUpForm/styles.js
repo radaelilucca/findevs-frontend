@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
 
@@ -9,8 +10,9 @@ export const Form = styled.form`
   .input-block {
     display: flex;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 26px;
     margin-left: 20px;
+    
 
     #techs {
       width: 400px;
@@ -63,27 +65,8 @@ export const Form = styled.form`
   }
 
   img {
-    width: 40%;
-    margin-bottom: 10px;
+    width: 50%;
+    margin-bottom: 5px;
     align-self: center;
-  }
-`;
-
-export const Button = styled.button`
-  background: rgba(87, 60, 163, 0.95);
-  border-radius: 16px;
-  width: 250px;
-  height: 40px;
-  align-self: center;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  transition: 0.1s linear;
-  margin-top: 20px;
-
-  &:hover {
-    transform: scale(1.1);
-    background: #8100e5;
-    font-weight: bold;
   }
 `;

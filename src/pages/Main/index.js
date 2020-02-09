@@ -22,17 +22,9 @@ import DevProfile from '../../components/DevProfile';
 function Main({ history }) {
   const [devs, setDevs] = useState([]);
   const [loggedDev, setLoggedDev] = useState('');
-  const [loaded, setLoaded] = useState(false);
 
 
-  // load devs
   useEffect(() => {
-    async function loadDevs() {
-      const response = await api.get('/devs');
-
-      setDevs(response.data);
-    }
-    // decode token to get logged user
     async function loadLoggedDev() {
       const token = await localStorage.getItem('findevs-token');
 
@@ -46,23 +38,25 @@ function Main({ history }) {
     }
 
     loadLoggedDev();
-    loadDevs();
-    setLoaded(true);
   }, []);
 
+  // load devs
   useEffect(() => {
+    async function loadDevs() {
+      const response = await api.get('/devs');
+
+      setDevs(response.data);
+    }
+    // decode token to get logged user
 
 
-  }, [loggedDev]);
+    loadDevs();
+  }, []);
+
 
   // inative user - disable
-  async function handleInativeDev(data) {
-    await api.put(`/devs/delete/${data}`);
-
-
-    const filterDevs = devs.filter((dev) => dev.github_user !== data.github_user);
-
-    setDevs(filterDevs);
+  function hadleHide() {
+    alert('This feat is under construction for now!');
   }
 
   // logout func
@@ -75,12 +69,12 @@ function Main({ history }) {
   return (
     <div id="main">
       <aside>
-        <DevProfile dev={loggedDev} loaded={loaded} key={loggedDev.name} logout={logout} />
+        <DevProfile dev={loggedDev} key={loggedDev.name} logout={logout} handleHide={hadleHide} />
       </aside>
       <main>
         <ul>
           {devs.map((dev) => (
-            <DevItem dev={dev} key={dev._id} deletar={handleInativeDev} />
+            <DevItem dev={dev} key={dev._id} />
           ))}
         </ul>
       </main>

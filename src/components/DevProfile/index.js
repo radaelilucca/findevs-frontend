@@ -10,13 +10,13 @@ import {
 
 import { Container, Buttons, DevTechs } from './styles';
 
-function DevProfile({ dev, logout }) {
+function DevProfile({ dev, logout, handleHide }) {
   return (
     <>
       <Container>
         <img src={dev.avatar_url} alt={dev.github_user} />
-        <h1>{process.env.REACT_APP_NOME}</h1>
-        <a href={`http://github.com/${dev.github_user}`}>
+        <h1>{dev.name}</h1>
+        <a href={`http://github.com/${dev.github_user}`} target="blank">
           <h3>
             @
             {dev.github_user}
@@ -25,11 +25,7 @@ function DevProfile({ dev, logout }) {
         <p>{dev.bio}</p>
         <DevTechs>
           <p>
-            <FaCode className="code-tag" />
-            {' '}
             { dev.techs ? dev.techs.join(', ') : 'Loading'}
-            {' '}
-            <FaCode className="code-tag" />
           </p>
 
         </DevTechs>
@@ -38,7 +34,7 @@ function DevProfile({ dev, logout }) {
           <div>
             <button
               onClick={() => {
-                alert('Funcionalidade Em Desenvolvimento');
+                alert('This feat is under construction for now!');
               }}
             >
               <FaUserEdit />
@@ -48,9 +44,7 @@ function DevProfile({ dev, logout }) {
 
           <div>
             <button
-              onClick={() => {
-                alert('Funcionalidade Em Desenvolvimento');
-              }}
+              onClick={handleHide}
             >
               <FaEyeSlash />
               {' '}

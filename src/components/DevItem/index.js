@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { FaGithubAlt, FaTrashAlt, FaMapMarkedAlt } from 'react-icons/fa';
+import { FaGithubAlt, FaBan, FaMapMarkedAlt } from 'react-icons/fa';
 import './styles.css';
 
 // import Swal from 'sweetalert2'
@@ -44,22 +44,33 @@ export default function DevItem({ dev, deletar }) {
           href={`https://github.com/${dev.github_user}`}
           target="blank"
         >
-          <button>
+          <button
+            title={`Check ${dev.name}'s Github`}
+            type="button"
+          >
             <FaGithubAlt />
           </button>
         </a>
-        <button className="map-button">
+        <button
+          className="map-button"
+          title={`See ${dev.name} in the map!`}
+          type="button"
+          onClick={() => {
+            alert('This feat is under construction for now!');
+          }}
+
+        >
           <FaMapMarkedAlt />
         </button>
         <button
-          title="Deletar"
+          title={`Block ${dev.name}!`}
           type="button"
           onClick={() => {
-            alert('Funcionalidade Desabilitada no Momento!');
+            alert('This feat is under construction for now!');
           }}
-          id="trash"
+
         >
-          <FaTrashAlt />
+          <FaBan />
         </button>
       </div>
     </li>

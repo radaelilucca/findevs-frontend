@@ -17,7 +17,7 @@ export const Container = styled.div`
 
     &:hover {
       transform: scale(1.1);
-      margin-bottom: 35px;
+      margin-bottom: 10px;
       margin-top: 5px;
       border-radius: 5px;
     }
@@ -66,7 +66,8 @@ export const DevTechs = styled.div`
     color: #222;
     font-size: 25px;
     font-weight: 600;
-    opacity: 0.8;    
+    opacity: 0.8; 
+    margin-top: 50px;   
   }
   
 `;
