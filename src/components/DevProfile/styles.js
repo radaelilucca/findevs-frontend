@@ -10,8 +10,7 @@ export const Container = styled.div`
   height: 100%; 
 
   img {
-    width: 130px;
-    height: 130px;
+    width: 130px;    
     border-radius: 50%;
     border: 3px solid rgba(85, 58, 162, 1);
     transition: 0.1s linear;
@@ -20,6 +19,11 @@ export const Container = styled.div`
       transform: scale(1.1);      
       margin-top: 25px;      
       border-radius: 5px;
+    }
+
+    @media(max-width: 415px){
+      margin-top: 10px;
+      width: 115px;
     }
   }
 
@@ -86,17 +90,27 @@ export const Buttons = styled.div`
       text-align: center;
       margin-left: 5px;
       color: rgba(85, 58, 162, 0.42);
+      @media(max-width: 415px){
+      position: absolute;
+      visibility: hidden;
+    }
     }
   }
-
+  .logout {
+      button {color: rgba(85, 58, 162, 1);}
+    }
   button {
     cursor: pointer;
     background: none;
     border: none;
     font-size: 28px;
-    color: rgba(85, 58, 162, 1);
+    color: #666;
+    
+    
     &:hover {
-      color: #8e4dff;
+      
     }
+
+   
   }
 `;

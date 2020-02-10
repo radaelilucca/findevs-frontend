@@ -34,9 +34,10 @@ function DevProfile({ dev, logout, handleHide }) {
           <div>
             <button
               title="Edit Profile"
-              onClick={() => {
-                alert('This feat is under construction for now!');
-              }}
+              type="button"
+              // onClick={() => {
+                // alert('This feat is under construction for now!');
+              // }}
             >
               <FaUserEdit />
             </button>
@@ -45,7 +46,7 @@ function DevProfile({ dev, logout, handleHide }) {
 
           <div>
             <button
-              onClick={handleHide}
+            //  onClick={handleHide}
               title="Hide yourself!"
             >
               <FaEyeSlash />
@@ -53,7 +54,7 @@ function DevProfile({ dev, logout, handleHide }) {
             </button>
             <p>Hide Yourself</p>
           </div>
-          <div>
+          <div className="logout">
             <button
               onClick={logout}
               title="Logout"
