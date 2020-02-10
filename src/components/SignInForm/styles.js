@@ -13,7 +13,7 @@ export const Form = styled.form`
   }
 
   img {
-    width: 45%;
+    width: 55%;
   }
 
   p{
