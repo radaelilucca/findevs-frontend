@@ -54,7 +54,7 @@ export const InputGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 380px;
+  width: 360px;
   height: 60px;  
   border-bottom: 2px solid #553aa2;
   box-sizing: border-box;
@@ -70,7 +70,7 @@ export const InputGroup = styled.div`
   } 
 `;
 export const Input = styled.input`
-  width: 90%;
+  width: 80%;
   background: none;
   border: 0;
   font-family: Roboto;
@@ -86,13 +86,13 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   width: 200px;
-  height: 55px;
+  height: 45px;
   background: #573c99;
   border-radius: 16px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 35px;
+  font-size: 32px;
   line-height: 41px;
   color: #ffffff;
   margin-top: 20px;

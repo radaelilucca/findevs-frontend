@@ -11,6 +11,7 @@ import {
   Button,
   Form,
   InputGroup,
+
 } from './styles';
 
 import logo from '../../assets/Logo3.png';
@@ -68,11 +69,15 @@ export default function SignInForm({ history }) {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+
         />
       </InputGroup>
-      <Button type="submit">login</Button>
+      <Button type="submit">Login</Button>
+
       <p>Dont hanve and account yet?</p>
       <Link to="/signup"> Create an Account</Link>
     </Form>
+
+
   );
 }
