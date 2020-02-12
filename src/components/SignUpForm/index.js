@@ -8,7 +8,7 @@ import {
   FaGithubAlt, FaKey, FaCompass, FaCode,
 } from 'react-icons/fa';
 
-import { Form, CreateAccount, InputGroup } from './styles';
+import { Form, CreateAccount } from './styles';
 
 import api from '../../services/api';
 import logo from '../../assets/Logo3.png';
@@ -22,7 +22,7 @@ export default function SignUpForm({ history }) {
   const [longitude, setLongitude] = useState('');
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.watchPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
 
@@ -55,14 +55,21 @@ export default function SignUpForm({ history }) {
         throw 'This password is too short! (min 6 characters)';
       }
 
-      const newDev = await api.post('/devs', {
+      const response = await api.post('/devs', {
         github_user: gitUser,
         password,
         techs,
         latitude,
         longitude,
       });
+
       history.push('/');
+
+      await Swal.fire({
+        title: response.data.sucess,
+        icon: 'success',
+        confirmButtonColor: '#7159c1',
+      });
     } catch (err) {
       await Swal.fire({
         title: err.response ? err.response.data.error : err,

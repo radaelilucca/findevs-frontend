@@ -1,9 +1,3 @@
-/* eslint-disable import/no-cycle */
-import jwt from 'jsonwebtoken';
-import promisify from 'util';
-import api from './api';
-
-import authConfig from '../config/auth';
 
 export const TOKEN_KEY = 'findevs-token';
 

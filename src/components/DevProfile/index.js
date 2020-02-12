@@ -5,7 +5,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import {
-  FaUserEdit, FaEyeSlash, FaSignOutAlt, FaCode,
+  FaUserEdit, FaEyeSlash, FaSignOutAlt,
 } from 'react-icons/fa';
 
 import { Container, Buttons, DevTechs } from './styles';
