@@ -20,7 +20,7 @@ export default function Header() {
             </span>
           </div>
           <div className="signup">
-            <span>Have you not an account yet?</span>
+            <span>Don't you have an account yet?</span>
             <Link to="/signup"><button>Sign Up Now</button></Link>
             <Link to="/signup"><FaUserPlus className="icon" /></Link>
           </div>
@@ -29,11 +29,11 @@ export default function Header() {
       <HeaderImage>
         <img src="https://www.onblastblog.com/wp-content/uploads/2019/09/09aea00fc018749c1c255ddfd594b218.jpeg" />
         <div className="message">
-          Encontre
+          Find
           <br />
-          Converse
+          Chat
           <br />
-          Interaja
+          Make Connections
         </div>
       </HeaderImage>
     </Container>
