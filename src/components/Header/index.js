@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { FaUser, FaUserPlus } from 'react-icons/fa';
+import { FaUser, FaUserPlus, FaMapMarkerAlt } from 'react-icons/fa';
 import { Container, Navigation, HeaderImage } from './styles';
 
 export default function Header() {
@@ -11,7 +11,7 @@ export default function Header() {
       <Navigation>
         <div className="wrap">
           <div className="logo">
-            <i className="fas fa-map-marker-alt" />
+            <FaMapMarkerAlt className="icon" />
             <span>
               <strong>F</strong>
               in

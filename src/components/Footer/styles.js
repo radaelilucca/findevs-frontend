@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: #7159c1;
+  background: #202020;
   color: #fff;
   text-align: center;
   font-size: 12px;
-  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+
+  span {
+    display: inline-block
+  }
 `;

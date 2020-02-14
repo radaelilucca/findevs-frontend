@@ -5,13 +5,21 @@ export const Container = styled.div`
   background: #e5e5e5;
 
   @media only screen and (min-width: 48em) {
-    padding: 5rem 1rem;
+    padding: 0;
   }
 `;
 
 export const LoginBox = styled.div`
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
   background: #ffffff;
+
+  @media only screen and (min-width: 48em) {
+    padding: 1rem;
+    position: absolute;
+    bottom: calc(40px + 3rem);
+    z-index: 1;
+    left: calc((100% - 1050px) / 2);
+  }
 `;

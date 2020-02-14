@@ -5,22 +5,28 @@ export const Container = styled.div``;
 export const Navigation = styled.div`
   width: 100%;
   background: #fff;
-  padding: 1rem 0;
+  height: 60px;
+
+  @media only screen and (min-width: 48em) {
+    height: 60px;
+  }
 
   .wrap {
     margin: 0 1rem;
-    position: relative
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%
   }
 
   .logo {
     color: #7159c1;
-    line-height: 30px;
-    height: 30px;
     font-size: 13px;
     display: inline-flex;
     align-items: center;
 
-    i {
+    .icon {
       font-size: 30px;
     }
 
@@ -29,12 +35,13 @@ export const Navigation = styled.div`
       margin-left: 10px;
       display: inline-block
     }
+
+    @media only screen and (min-width: 48em) {
+      
+    }
   }
 
   .signup {
-    position: absolute;
-    right: 0;
-    top: 0;
     height: 30px;
     font-size: 12px;
     display: flex;
@@ -94,7 +101,7 @@ export const Navigation = styled.div`
 
 export const HeaderImage = styled.div`
   position: relative;
-  height: 400px;
+  height: calc(100vh - 60px);
   overflow: hidden;
 
   img {
@@ -106,7 +113,7 @@ export const HeaderImage = styled.div`
   }
 
   @media only screen and (min-width: 48em) {
-    height: 600px;
+    height: calc(100vh - 100px);
 
     img {
       width: 100%;
@@ -136,9 +143,11 @@ export const HeaderImage = styled.div`
     left: 1rem;
 
     @media only screen and (min-width: 48em) {
-      left: calc((100% - 1050px) / 2);
+      right: calc((100% - 1050px) / 2);
       font-size: 50px;
       bottom: 3rem;
+      text-align: right;
+      left: auto
     }
   }
 `;
