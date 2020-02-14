@@ -31,9 +31,9 @@ export default function Header() {
         <div className="message">
           Find
           <br />
-          Chat
+          Talk
           <br />
-          Make Connections
+          Interact
         </div>
       </HeaderImage>
     </Container>
