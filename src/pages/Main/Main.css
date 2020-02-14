@@ -7,13 +7,13 @@
 }
 
 aside {  
-  padding-top: 40px;
+ background-color: #FFF;
+  padding: 20px;
   width: 350px;
-  height: 490px;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  
   box-shadow: 8px 8px 5px rgba(85, 58, 162, 0.3);
   border: 1px solid rgba(85, 58, 162, 0.3);
   border-top: 2px solid rgba(85, 58, 162, 0.2);
@@ -23,29 +23,14 @@ aside {
 
 
 main {
-  flex: 1;
+ 
   margin-left: 20px;
 }
 
-main ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  list-style: none;
-
-}
-
-
-
-
-main {
-  flex: 1;
-  margin-left: 20px;
-}
 
 main ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);  
   gap: 20px;
   list-style: none;
 
@@ -67,7 +52,7 @@ main ul {
  
 }
 
-@media(max-width: 1300px){
+@media(max-width: 1450px){
     #main {
       flex-direction: column;
     }
