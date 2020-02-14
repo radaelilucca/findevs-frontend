@@ -7,6 +7,8 @@ import {
 
 import '../../global.css';
 import SignInForm from '../../components/SignInForm';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 import { getToken } from '../../services/auth';
 
@@ -23,11 +25,15 @@ function SignIn({ history }) {
 
 
   return (
-    <Container>
-      <LoginBox>
-        <SignInForm history={history} />
-      </LoginBox>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <LoginBox>
+          <SignInForm history={history} />
+        </LoginBox>
+      </Container>
+      <Footer />
+    </>
   );
 }
 export default SignIn;

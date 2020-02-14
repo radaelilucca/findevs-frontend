@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { FaGithubAlt, FaLock } from 'react-icons/fa';
 
 import {
-  Title,
   Input,
   Button,
   Form,
@@ -14,7 +13,6 @@ import {
 
 } from './styles';
 
-import logo from '../../assets/Logo3.png';
 import api from '../../services/api';
 
 export default function SignInForm({ history }) {
@@ -48,8 +46,6 @@ export default function SignInForm({ history }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <img src={logo} alt="FinDevs" />
-      <Title>Welcome back, Dev!</Title>
       <InputGroup>
         <FaGithubAlt className="icon" />
         <Input
@@ -72,10 +68,10 @@ export default function SignInForm({ history }) {
 
         />
       </InputGroup>
+      <div className="links">
+        <Link to="/signup">Have you not an account yet? Sign up now!</Link>
+      </div>
       <Button type="submit">Login</Button>
-
-      <p>Dont hanve and account yet?</p>
-      <Link to="/signup"> Create an Account</Link>
     </Form>
 
 

@@ -1,108 +1,87 @@
 import styled from 'styled-components';
 
-
 export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem;
 
-  .icon {
-    font-size: 35px;
-    color: #553aa2;
+  .links {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin-bottom: 1rem
   }
 
-  img {
-    width: 55%;
-  }
-
-  p{
-    margin-top: 20px;
-    font-size: 20px;
-    color: #8888;
-    opacity: 0.9;
-  }
-
-  a {
-    font-size: 25px;
+  .links a {
     text-decoration: none;
-    margin-top: 5px;
+    color: #829FD9;
+    transition: color 0.5s ease;
   }
 
-  @media (max-width: 400px){
-    img {
-      width: 60%;
-    }
-
+  .links a:hover {
+    color: #7159c1
   }
-`;
-
-export const Title = styled.h1`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-  color: rgba(102, 102, 102, 0.55);
-  margin-bottom: 30px;
-  @media (max-width: 400px){
-    font-size: 20px;
-
-  } 
 `;
 
 export const InputGroup = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 360px;
-  height: 60px;  
-  border-bottom: 2px solid #553aa2;
-  box-sizing: border-box;
-  margin-bottom: 18px;
+  justify-content: space-between;
+  height: 30px;  
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 1rem;
   transition: 0.1s linear;
-  &:hover{
-    width: 95%;
-  }
-  @media (max-width: 400px){
-    width: 280px;
-    height: 50px; 
 
-  } 
+  &:hover {
+    border-bottom: 1px solid #553aa2;
+  }
+
+  .icon {
+    font-size: 20px;
+    color: #aaa;
+    transition: color 0.5s ease;
+    width: 20px;
+    display: inline-block
+  }
+
+  &:hover .icon {
+    color: #553aa2;
+  }
 `;
 export const Input = styled.input`
-  width: 80%;
-  background: none;
+  width: calc(100% - 28px);
   border: 0;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  color: #573ca3;
-  opacity: 0.6;
+  font-family: Poppins;
+  font-size: 13px;
+  color: #7159c1;
+  opacity: 0.8;
   display: flex;
   align-items: center;
-  text-align: center;  
+  font-weight: 600;
+  text-decoration: none;
+
+  &::placeholder {
+    color: #555555;
+  }
 `;
 
 export const Button = styled.button`
-  width: 200px;
-  height: 45px;
-  background: #573c99;
-  border-radius: 16px;
-  font-family: Roboto;
+  height: 40px;
+  background: #573ca3;
+  font-family: Poppins;
   font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 41px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1rem;
   color: #ffffff;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  transition: 0.05s linear;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 0;
+  transition: all .5s ease;
+  border: 0;
+  opacity: 0.8;
   cursor: pointer;
+  font-weight: 600;
 
   &:hover {
-    transform: scaleX(1.06);
-    background: #8e4dff;
+    opacity: 1
   }
 `;
