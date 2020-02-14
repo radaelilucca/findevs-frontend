@@ -12,8 +12,7 @@ export const Navigation = styled.div`
   }
 
   .wrap {
-    margin: 0 1rem;
-    position: relative;
+    margin: 0 auto; 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,11 +26,11 @@ export const Navigation = styled.div`
     align-items: center;
 
     .icon {
-      font-size: 30px;
+      font-size: 40px;
     }
 
     span {
-      font-size: 14px;
+      font-size: 28px;
       margin-left: 10px;
       display: inline-block
     }
@@ -42,41 +41,45 @@ export const Navigation = styled.div`
   }
 
   .signup {
-    height: 30px;
-    font-size: 12px;
+    
+    font-size: 16px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+   
+    
 
     @media only screen and (min-width: 48em) {
       display: block;
     }
 
     .icon {
-      font-size: 14px;
+      font-size: 16px;
       color: #7159c1;
       cursor: pointer;
     }
 
     span {
-      line-height: 30px;
+      
       color: #222;
       font-weight: 500;
-      display: none;
+      
     }
 
     button {
-      margin: 0;
+      
       background: #7159c1;
       border-radius: 0;
       color: #fff;
       text-align: center;
-      height: 30px !important;
+      height: 40px;
       border: 0;
       margin-left: 10px;
       padding: 0 1rem;
-      font-weight: bold;
+      font-weight: 600;
       display: none;
       cursor: pointer;
+    
     }
 
     @media only screen and (min-width: 48em) {
@@ -135,7 +138,7 @@ export const HeaderImage = styled.div`
 
   .message {
     z-index: 2;
-    font-size: 24px;
+    font-size: 28px;
     position: absolute;
     color: #fff;
     bottom: 1rem;

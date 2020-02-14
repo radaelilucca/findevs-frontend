@@ -2,18 +2,18 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #fff;
-  width: 100%;
-  height: 100%; 
-
+  
   img {
     width: 130px;    
     border-radius: 50%;
     border: 3px solid rgba(85, 58, 162, 1);
     transition: 0.1s linear;
+    margin-top: 10px;
 
     &:hover {
       transform: scale(1.1);      
@@ -65,6 +65,7 @@ export const Container = styled.div`
 export const DevTechs = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 15px;
   p {    
     color: #222;
     font-size: 20px;
@@ -79,7 +80,7 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 50px;
 
   div {
     display: flex;
